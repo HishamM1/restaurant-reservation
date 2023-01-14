@@ -1,0 +1,329 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Work Sans", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+nav {
+    padding: 10px 50px 30px 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    width: 100%;
+    z-index: 1;
+    position: absolute;
+}
+
+nav a:hover {
+    color: #ff8800;
+}
+
+a {
+    text-decoration: none;
+    font-weight: 500;
+    color: black;
+}
+
+nav h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+    font-family: 'DM Serif Display', serif;
+    letter-spacing: 3px;
+    color: #ff8800;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    font-size: 1.2em;
+    margin-left: 50px;
+}
+
+.mainpage {
+    padding: 20px;
+    background-image: url("../imgs/brooke-lark-unsplash-food.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.mainpage h2 {
+    letter-spacing: 4px;
+    font-size: 4em;
+    margin-left: 8%;
+    color: black;
+    font-family: "DM Serif Display", serif;
+    font-weight: 600;
+}
+
+.mainpage h2:nth-child(1) {
+    margin-top: 10%;
+}
+
+.reservation {
+    margin-top: 3%;
+}
+
+.button {
+    text-decoration: none;
+    background-color: #ff8800;
+    color: white;
+    font-size: 1.3em;
+    padding: 20px 20px;
+    border-radius: 10px;
+    margin-left: 8%;
+}
+
+.icons {
+    margin-top: 5%;
+    margin-left: 8%;
+    font-size: 1.2em;
+}
+
+.icons i {
+    color: #ff8800;
+}
+
+.icons span {
+    margin-right: 20px;
+}
+
+.count {
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+.aboutus {
+    background-image: url("../imgs/aboutus.jpg");
+    height: 100vh;
+}
+
+.aboutus div {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    padding: 8% 0 0 37%;
+    width: 85%;
+}
+
+.aboutus div p:nth-child(1) {
+    font-size: 1.3em;
+    color: #ff8800;
+}
+
+.aboutus div h1 {
+    font-family: "DM Serif Display", serif;
+    font-size: 3em;
+    letter-spacing: 3px;
+}
+
+.about {
+    margin-top: 3%;
+    margin-bottom: 3%;
+    line-height: 1.6em;
+    color: #5b5b77;
+}
+
+.menu {
+    background-color: #f2f6f7;
+    min-height: 100vh;
+    padding-top: 5%;
+}
+
+.menu ul {
+    display: inline;
+    margin-left: 35%;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #cbcccd;
+    width: 100%;
+}
+
+.menu ul li {
+    display: inline;
+    list-style: none;
+    padding: 10px 40px;
+    color: #28284d;
+    cursor: pointer;
+}
+
+.menu ul li.active {
+    color: #ff8800;
+    border-bottom: 1px solid #ff8800;
+}
+
+.content {
+    margin-top: 5%;
+}
+
+.content div {
+    display: none;
+}
+
+.content div.active {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.content article {
+    margin: 10px 20px;
+    padding: 10px;
+    border: 1px solid #cbcccd;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 15%;
+    background: #f4f4f4;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.12);
+}
+
+
+article img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.menu h1 {
+    text-align: center;
+    font-family: "DM Serif Display", serif;
+    font-size: 3em;
+    letter-spacing: 3px;
+    margin-bottom: 3%;
+}
+
+.price {
+    display: inline-block;
+    margin-top: 5px;
+}
+
+
+.book-table {
+    padding: 5%;
+    background-image: url("book-table.jpg");
+    height: 100vh;
+}
+
+.book-table .book {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.book-table p:nth-child(1) {
+    font-size: 1.4em;
+    color: #ff8800;
+    margin-bottom: 7px;
+    margin-top: 15px;
+}
+
+.book-table h1 {
+    font-family: "DM Serif Display", serif;
+    font-size: 5em;
+    font-weight: 400;
+    letter-spacing: 4px;
+}
+
+.book-table h2 {
+    font-family: "DM Serif Display", serif;
+    font-size: 3em;
+    color: #ff8800;
+}
+
+.book-table i {
+    color: #ff8800;
+    font-size: 2.2em;
+    margin-block: 50px 10px;
+    border: 1px solid #ff8800;
+    border-radius: 50%;
+    padding: 18px;
+}
+
+.callNow {
+    font-weight: 600;
+    margin-block: 10px;
+}
+
+.hours {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    margin-top: 30px;
+}
+
+.hours div span {
+    font-size: 1.3em;
+}
+
+.hours div h3 {
+    font-size: 2.5em;
+    margin-top: 15px;
+    font-family: "DM Serif Display", serif;
+}
+
+footer {
+    background-color: #f2f6f7;
+    color: black;
+    padding-block: 35px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.container h1 {
+    font-family: "DM Serif Display", serif;
+    font-size: 2em;
+    margin-bottom: 50px;
+}
+
+.brief {
+    max-width: 20%;
+}
+
+.container p {
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cbcccd;
+    border-radius: 5px;
+    margin-bottom: 80px;
+}
+
+.newsletter {
+    min-width: 20%;
+}
+
+.success {
+    background-color: #ff8800;
+    color: white;
+    position: fixed;
+    bottom: 30px;
+    right: 50px;
+    width: 325px;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 10px;
+}
