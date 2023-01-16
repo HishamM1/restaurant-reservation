@@ -3,8 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\TableController;
-
+use App\Models\Category;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,3 +43,10 @@ Route::post('/admin/addtable/store', [TableController::class, 'store'])->middlew
 Route::post('/admin/tables/{id}/delete', [TableController::class, 'destroy'])->middleware('auth');
 Route::get('/admin/tables/{id}/edit', [TableController::class, 'edit'])->middleware('auth');
 Route::post('/admin/tables/{id}/update', [TableController::class, 'update'])->middleware('auth');
+
+
+Route::get('/admin/categories', [CategoryController::class, 'index'])->middleware('auth')->name('categories');
+Route::get('/admin/addcategory', [CategoryController::class, 'addCategory'])->middleware('auth');
+Route::post('/admin/addcategory/store', [CategoryController::class, 'store'])->middleware('auth');
+Route::get('/admin/categories/{id}/edit', [CategoryController::class, 'edit'])->middleware('auth');
+Route::post('/admin/categories/{id}/delete', [CategoryController::class, 'destroy'])->middleware('auth');

@@ -21,11 +21,11 @@
                 <a href="/admin/reservations" class="list-group-item list-group-item-action py-2 ripple">
                     <i class="fas fa-chart-area fa-fw me-3"></i><span>Reservations</span>
                 </a>
-                <a href="/admin/tables" class="list-group-item list-group-item-action py-2 ripple active"><i
+                <a href="/admin/tables" class="list-group-item list-group-item-action py-2 ripple"><i
                         class="fas fa-lock fa-fw me-3"></i><span>Tables</span></a>
                 <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
                         class="fas fa-chart-line fa-fw me-3"></i><span>Menu</span></a>
-                <a href="/admin/categories" class="list-group-item list-group-item-action py-2 ripple">
+                <a href="/admin/categories" class="list-group-item list-group-item-action py-2 ripple active">
                     <i class="fas fa-chart-pie fa-fw me-3"></i><span>Categories</span>
                 </a>
                 <a href="/logout" class="list-group-item list-group-item-action py-2 ripple"><i
@@ -40,53 +40,44 @@
             {{-- add table button --}}
             <div class="col-12">
                 <div class="col-12">
-                    <h1>Tables</h1>
-                    <a href="/admin/addtable">
+                    <h1>Categories</h1>
+                    <a href="/admin/addcategory">
                         <button type="button" class="btn btn-primary">
-                            Add table
+                            Add Category
                         </button>
                     </a>
                     <table class="table align-middle mb-0 mt-4 bg-white">
                         <thead class="bg-light">
                             <tr>
-                                <th>Table id</th>
-                                <th>Capacity</th>
-                                <th>Status</th>
-                                <th>Location</th>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Image</th>
                                 <th>Actions</th>
 
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($tables as $table)
+                            @foreach ($categories as $category)
                                 <tr>
-                                    {{-- Table id --}}
-                                    <td>
-                                        <p class="fw-normal mb-1">{{ $table->id }}</p>
-                                    </td>
-                                    {{-- Table Capacity --}}
-                                    <td>{{ $table->capacity }}</td>
-                                    {{-- Table Status --}}
-                                    @if ($table->status == 'available')
-                                        <td>
-                                            <span class="badge badge-success rounded-pill d-inline">Available</span>
-                                        </td>
-                                    @else
-                                        <td>
-                                            <span class="badge badge-danger rounded-pill d-inline">Reserved</span>
-                                        </td>
-                                    @endif
-                                    {{-- Table Location --}}
-                                    <td>{{ $table->location }}</td>
+                                    {{-- Category Name --}}
+                                    <td>{{ $category->name }}</td>
+                                    {{-- Category Description --}}
+                                    <td>{{ $category->description }}</td>
                                     {{-- Edit and Delete buttons --}}
                                     <td>
-                                        <a href="/admin/tables/{{ $table->id }}/edit" class="btn btn-sm btn-primary">
+                                        <img src="{{ asset('storage/' . $category->image) }}" alt="not found"
+                                            height="90" width="90">
+                                    </td>
+                                    <td>
+                                        <a href="/admin/categories/{{ $category->id }}/edit"
+                                            class="btn btn-sm btn-primary">
                                             Edit
                                         </a>
-                                        <a href="/admin/tables/{{ $table->id }}/delete"
-                                            class="btn btn-danger btn-sm btn-rounded">
-                                            Delete
-                                        </a>
+                                        <form action="/admin/categories/{{ $category->id }}/delete" method="POST"
+                                            class="d-inline">
+                                            @csrf
+                                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach
@@ -96,6 +87,5 @@
                 </div>
             </div>
     </main>
-
 
 </body>

@@ -40,4 +40,11 @@ class TableController extends Controller
         Table::find($id)->update($attributes);
         return redirect()->route('tables');
     }
+
+    public function destroy($id)
+    {
+        $table = Table::find($id);
+        $table->delete();
+        return redirect()->route('tables');
+    }
 }
