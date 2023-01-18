@@ -48,9 +48,11 @@ class CategoryController extends Controller
         $attributes = $request->validate([
             'name' => ['required'],
             'description' => ['required'],
-            'image' => ['required', 'mimes:jpg,png,jpeg', 'max:8000']
+            'image' => ['mimes:jpg,png,jpeg', 'max:8000']
         ]);
-        $attributes['image'] = request()->file('image')->store('categoriesImages', 'public');
+        if (isset($attributes['image'])) {
+            $attributes['image'] = request()->file('image')->store('categoriesImages', 'public');
+        }
         Category::find($id)->update($attributes);
         return redirect()->route('categories');
     }

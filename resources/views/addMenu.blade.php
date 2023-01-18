@@ -15,7 +15,7 @@
             <div class="col-lg-7 mx-auto">
                 <div class="bg-white rounded-lg shadow-sm p-5">
                     <div class="tab-content">
-                        <h1>Edit Category</h1>
+                        <h1>Add Food</h1>
                         <div id="nav-tab-card" class="tab-pane fade show active">
                             @if ($errors->any())
                                 <div class="alert alert-danger">
@@ -26,27 +26,38 @@
                                     </ul>
                                 </div>
                             @endif
-                            <form action="/admin/categories/{{ $category->id }}/update" method="POST"
-                                enctype="multipart/form-data">
+                            <form action="/admin/addmenu/store" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
                                     <label for="Name">Name</label>
-                                    <input type="text" name="name" placeholder="Category Name"
-                                        value="{{ $category->name }}" required class="form-control">
+                                    <input type="text" name="name" placeholder="Food Name"
+                                        value="{{ old('name') }}" required class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label for="description">Description</label>
-                                    <input type="text" name="description" value="{{ $category->description }}"
-                                        placeholder="Category description" required class="form-control">
+                                    <input type="text" name="description" value="{{ old('description') }}"
+                                        placeholder="Food description" required class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label for="image">Image</label>
-                                    <img src="{{ asset('storage/' . $category->image) }}" alt="not found" height="90"
-                                        width="90">
-                                    <input type="file" name="image">
+                                    <input type="file" name="image" required>
                                 </div>
+                                <div class="form-group">
+                                    <label for="Category">Category</label>
+                                    <select name="category_id" class="form-control">
+                                        @foreach ($categories as $category)
+                                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="price">Price</label>
+                                    <input type="number" name="price" placeholder="Food price"
+                                        value="{{ old('price') }}" required class="form-control">
+                                </div>
+
                                 <input class="subscribe btn btn-primary btn-block rounded-pill shadow-sm" type="submit"
-                                    value="Edit">
+                                    value="Add">
                             </form>
                         </div>
                         <!-- End -->

@@ -5,6 +5,7 @@ use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\TableController;
+use App\Http\Controllers\MenuController;
 use App\Models\Category;
 
 /*
@@ -49,4 +50,12 @@ Route::get('/admin/categories', [CategoryController::class, 'index'])->middlewar
 Route::get('/admin/addcategory', [CategoryController::class, 'addCategory'])->middleware('auth');
 Route::post('/admin/addcategory/store', [CategoryController::class, 'store'])->middleware('auth');
 Route::get('/admin/categories/{id}/edit', [CategoryController::class, 'edit'])->middleware('auth');
+Route::post('/admin/categories/{id}/update', [CategoryController::class, 'update'])->middleware('auth');
 Route::post('/admin/categories/{id}/delete', [CategoryController::class, 'destroy'])->middleware('auth');
+
+Route::get('/admin/menu', [MenuController::class, 'index'])->middleware('auth')->name('menu');
+Route::get('/admin/addmenu', [MenuController::class, 'addMenu'])->middleware('auth');
+Route::post('/admin/addmenu/store', [MenuController::class, 'store'])->middleware('auth');
+Route::get('/admin/menu/{id}/edit', [MenuController::class, 'edit'])->middleware('auth');
+Route::post('/admin/menu/{id}/update', [MenuController::class, 'update'])->middleware('auth');
+Route::post('/admin/menu/{id}/delete', [MenuController::class, 'destroy'])->middleware('auth');

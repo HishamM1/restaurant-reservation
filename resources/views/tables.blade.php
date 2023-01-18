@@ -23,7 +23,7 @@
                 </a>
                 <a href="/admin/tables" class="list-group-item list-group-item-action py-2 ripple active"><i
                         class="fas fa-lock fa-fw me-3"></i><span>Tables</span></a>
-                <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
+                <a href="/admin/menu" class="list-group-item list-group-item-action py-2 ripple"><i
                         class="fas fa-chart-line fa-fw me-3"></i><span>Menu</span></a>
                 <a href="/admin/categories" class="list-group-item list-group-item-action py-2 ripple">
                     <i class="fas fa-chart-pie fa-fw me-3"></i><span>Categories</span>

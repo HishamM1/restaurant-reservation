@@ -38,7 +38,7 @@ class ReservationController extends Controller
             'date' => ['required', 'date', 'after_or_equal:today'],
             'time' => ['required', 'date_format:H:i'],
             'guests_number' => ['required', 'integer', 'min:1'],
-            'message' => ['required', 'string', 'min:3', 'max:600'],
+            'message' => ['string', 'max:600'],
             'table_id' => ['required', 'integer', 'exists:tables,id']
         ]);
         Reservation::create($attributes);
