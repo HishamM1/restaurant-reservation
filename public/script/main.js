@@ -3,6 +3,7 @@ if (document.querySelector(".success")) {
       document.querySelector(".success").style.display = "none";
   }, 5000);
 }
+
 const tabs = document.querySelectorAll(".menu li");
 const contents = document.querySelectorAll(".content div");
 tabs.forEach((tab) => {
@@ -21,3 +22,4 @@ tabs.forEach((tab) => {
 // it doesn't show the first content when the page is loaded
 // so we have to add this line to show the first content
 document.querySelector(".breakfast").classList.add("active");
+document.querySelector(".menu ul li").classList.add("active");

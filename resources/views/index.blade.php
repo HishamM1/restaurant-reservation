@@ -20,6 +20,7 @@
             {{ session()->get('success') }}
         </div>
     @endif
+
     <section class="mainpage">
         <h2>Welcome</h2>
         <h2>To Our Nightcap</h2>
@@ -71,93 +72,25 @@
     <section class="menu" id="menu">
         <h1>Our Speciliaty Cuisine</h1>
         <ul>
-            <li class="active" data-cont=".breakfast">Breakfast</li>
-            <li data-cont=".launch">Launch</li>
-            <li data-cont=".dinner">Dinner</li>
+            @foreach ($categories as $category)
+                <li data-cont=".{{ $category->name }}">{{ $category->name }}</li>
+            @endforeach
         </ul>
         <div class="content">
-            <div class="breakfast">
-                <article class="breakfast1">
-                    <img src="imgs/aboutus.jpg" alt="No" />
-                    <h3>Breakfast 1</h3>
-                    <!-- price -->
-                    <span class="price"> $20 </span>
-                </article>
-                <article class="breakfast2">
-                    <img src="imgs/aboutus.jpg" alt="No" />
-                    <h3>Breakfast 2</h3>
-
-                    <!-- price -->
-                    <span class="price"> $20 </span>
-                </article>
-                <article class="breakfast3">
-                    <img src="imgs/aboutus.jpg" alt="No" />
-                    <h3>Breakfast 3</h3>
-
-                    <!-- price -->
-                    <span class="price"> $20 </span>
-                </article>
-                <article class="breakfast3">
-                    <img src="imgs/aboutus.jpg" alt="No" />
-                    <h3>Breakfast 3</h3>
-
-                    <!-- price -->
-                    <span class="price"> $20 </span>
-                </article>
-                <article class="breakfast3">
-                    <img src="imgs/aboutus.jpg" alt="No" />
-                    <h3>Breakfast 3</h3>
-
-                    <!-- price -->
-                    <span class="price"> $20 </span>
-                </article>
-            </div>
-            <div class="launch">
-                <article class="launch1">
-                    <img src="imgs/aboutus.jpg" alt="No" />
-                    <h3>launch 1</h3>
-
-                    <!-- price -->
-                    <span class="price"> $20 </span>
-                </article>
-                <article class="launch2">
-                    <img src="imgs/aboutus.jpg" alt="No" />
-                    <h3>launch 2</h3>
-
-                    <!-- price -->
-                    <span class="price"> $20 </span>
-                </article>
-                <article class="launch3">
-                    <img src="imgs/aboutus.jpg" alt="No" />
-                    <h3>launch 3</h3>
-
-                    <!-- price -->
-                    <span class="price"> $20 </span>
-                </article>
-            </div>
-            <div class="dinner">
-                <article class="dinner1">
-                    <img src="imgs/aboutus.jpg" alt="No" />
-                    <h3>dinner 1</h3>
-
-                    <!-- price -->
-                    <span class="price"> $20 </span>
-                </article>
-                <article class="dinner2">
-                    <img src="imgs/aboutus.jpg" alt="No" />
-                    <h3>dinner 2</h3>
-
-                    <!-- price -->
-                    <span class="price"> $20 </span>
-                </article>
-                <article class="dinner3">
-                    <img src="imgs/aboutus.jpg" alt="No" />
-                    <h3>dinner 3</h3>
-
-                    <!-- price -->
-                    <span class="price"> $20 </span>
-                </article>
-            </div>
+            @foreach ($categories as $category)
+                <div class="{{ $category->name }}">
+                    @foreach ($menu as $food)
+                        @if ($food->category->name == $category->name)
+                            <article>
+                                <img src="{{ asset('storage/' . $food->image) }}" alt="{{ $food->name }}" />
+                                <h3>{{ $food->name }}</h3>
+                                <!-- price -->
+                                <span class="price"> ${{ $food->price }} </span>
+                            </article>
+                        @endif
+                    @endforeach
+                </div>
+            @endforeach
         </div>
     </section>
     <section class="book-table">

@@ -7,6 +7,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\TableController;
 use App\Http\Controllers\MenuController;
 use App\Models\Category;
+use App\Models\Menu;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +21,10 @@ use App\Models\Category;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('index', [
+        'categories' => Category::all('name'),
+        'menu' => Menu::all()
+    ]);
 })->name('home');
 
 Route::get('/reservation', [ReservationController::class, 'reserve']);
