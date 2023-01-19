@@ -30,15 +30,18 @@
                 <input type="email" name="email" id="email" placeholder="Email" value="{{ old('email') }}" />
                 <input type="tel" name="phone" id="phone" placeholder="Phone" value="{{ old('phone') }}" />
                 <label for="date">Date</label>
-                <input type="date" name="date" id="date" value="{{ old('date') }}" />
+                <input type="date" name="date" id="date" value="{{ old('date') }}"
+                    onfocus="dateValidation()" />
                 <label for="time">Time</label>
-                <input type="time" name="time" id="time" value="{{ old('time') }}" />
+                <input type="time" name="time" id="time" value="{{ old('time') }}" min="09:00"
+                    max="22:00" />
                 <label for="people">Number of guests</label>
                 <select name="guests_number" id="people">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
+                    <option value="5">5</option>
                 </select>
                 <label for="table">Table (Capacity)</label>
                 <select name="table_id" id="table">
@@ -51,6 +54,7 @@
             </form>
         </div>
     </div>
+    <script src="script/main.js"></script>
 
 </body>
 

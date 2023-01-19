@@ -4,6 +4,16 @@ if (document.querySelector(".success")) {
   }, 5000);
 }
 
+function dateValidation() {
+  let today = new Date()
+  let afterWeek = new Date()
+  afterWeek.setDate(afterWeek.getDate() + 7)
+  afterWeek = afterWeek.toISOString().split('T')[0]
+  today = today.toISOString().split('T')[0]
+  document.getElementById('date').min = today
+  document.getElementById('date').max = afterWeek
+}
+
 const tabs = document.querySelectorAll(".menu li");
 const contents = document.querySelectorAll(".content div");
 tabs.forEach((tab) => {

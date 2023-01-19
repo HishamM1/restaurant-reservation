@@ -123,7 +123,7 @@
             </div>
             <div class="openHours">
                 <h1>Opening Hours</h1>
-                <p>Mon-Fri: 9 AM - 6PM</p>
+                <p>Mon-Fri: 9 AM - 6 PM</p>
                 <p>Saturday: 9 AM - 4 PM</p>
                 <p>Sunday: Closed</p>
             </div>
