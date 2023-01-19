@@ -66,7 +66,7 @@
                 Donec sodales sagittis magna. Aenean commodo ligula.
             </p>
 
-            <a class="button" href="">Discover Menu</a>
+            <a class="button" href="#menu">Discover Menu</a>
         </div>
     </section>
     <section class="menu" id="menu">
