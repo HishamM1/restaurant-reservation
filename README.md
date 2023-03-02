@@ -11,7 +11,7 @@ A restaurant website where a guest can make a reservation for a table and an adm
 * Control tables
 * Control food categories
 
-# Techbologies
+# Technologies
 * PHP
 * Laravel
 * Bootstrap
